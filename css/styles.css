@@ -1,0 +1,36 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+ h2, .h2, h1, .h1 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+@media (min-width: 1200px) {
+  h2, .h2 {
+    font-size: 2rem;
+  }
+}
+@mainNav{
+    font-size: 40px;
+}
+card-body{
+    padding: 0 5 0 0px;
+}
+
+
+
+
+

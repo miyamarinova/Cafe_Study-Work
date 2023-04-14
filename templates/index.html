@@ -1,0 +1,59 @@
+{% include 'header.html' %}
+
+<div class="container xl-4">
+    <div class="col-xl-4 mx-auto">
+        <div class="text-center">
+            <h2 class="fw-bolder">Study and Work friendly Cafes</h2>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row ">
+        {% for cafe in cafe_list %}
+            <div class="col-3 col-md-3 col-sm-3" >
+            <div class="card">
+            <img src="{{cafe.img_url}}" class="img rounded-start center-cropped" alt="..." style="height: 13rem;">
+            <h5 class="card-title">{{cafe.name}}</h5>
+            <a class="card-text">{{cafe.location}}<a>
+                <a href="{{cafe.map_url}}">Google Maps Link</a>
+                <p class="card-text"><small class="text-muted">Amenities: {{cafe.seats}}</small><br
+                <p class="fa-solid fa-mug-saucer"></p>Coffee price: {{cafe.coffee_price}} <br>
+                <p class="fa-solid fa-wifi">WiFi: {{cafe.has_wifi}}<span class="fa-solid fa-check text-success"></span></p>
+                <p class="fa-solid fa-restroom">Toilet: {{cafe.has_toilet}}</p>
+                <p class="fa-solid fa-phone-flip">Phone Calls: {{cafe.can_take_calls}}</p>
+                <p class="fa-solid fa-sockets-flip">Sockets: {{cafe.has_sockets}}</p>
+                {% if current_user.id == 1:%}
+                <a href="{{url_for('delete_cafe', cafe_id=cafe.id) }}">✘</a>
+                {% endif %}
+            </div></div>
+        {% endfor %}
+
+</div>
+</div>
+</div>
+<!-- Footer-->
+
+
+<footer class="bg-dark py-4 mt-auto">
+    <div class="container px-5">
+        <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+            <div class="col-auto">
+                <div class="small m-0 text-white">Copyright &copy; Your Website 2023</div>
+            </div>
+            <div class="col-auto">
+                <a class="link-light small" href="#!">Privacy</a>
+                <span class="text-white mx-1">&middot;</span>
+                <a class="link-light small" href="#!">Terms</a>
+                <span class="text-white mx-1">&middot;</span>
+                <a class="link-light small" href="#!">Contact</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+
